@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import "./App.css";
 import Card from "./components/Card";
 import data from "./data/mock_data.json";
 
-function App() {
+const App = () => {
   const [term, setterm] = useState("");
 
   const [ispressed, setpressed] = useState(false);
   const [item, setitem] = useState("");
-
+  const [filteredData, setfilteredData] = useState([]);
   // useEffect(() => {
   //   setfilteredData(() =>
   //     data.filter((i) => {
@@ -28,7 +28,7 @@ function App() {
         style={{
           width: "100%",
           height: 100,
-          background: "#ff9861",
+          background: "#3d3d3d",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -42,17 +42,18 @@ function App() {
             borderRadius: 15,
             padding: 10,
             fontSize: 20,
+            borderColor: "gray",
           }}
           placeholder="Search Names"
           onChange={(e) => setterm(e.target.value)}
         />
       </div>
       <Stylediv>
-        {newData.map((i) => (
+        {newData.map((i, index) => (
           <Card
-            key={i.id}
+            key={index}
             name={i.name}
-            bg={ispressed && item === i.name ? "#ed7c6b" : "#000"}
+            bg={ispressed && item === i.name ? "#ff5252" : "#000"}
             onPress={() => {
               setpressed(!ispressed);
               setitem(i.name);
@@ -62,12 +63,12 @@ function App() {
       </Stylediv>
     </div>
   );
-}
+};
 
 const Stylediv = styled.div`
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: #d6d6d6;
   display: flex;
   flex-direction: row;
   align-items: center;
