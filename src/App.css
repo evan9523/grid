@@ -21,11 +21,23 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.layout {
+  width: 80%;
+  height: 80%;
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 @keyframes App-logo-spin {
