@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import "./App.css";
 import Card from "./components/Card";
@@ -9,14 +9,6 @@ const App = () => {
 
   const [ispressed, setpressed] = useState(false);
   const [item, setitem] = useState("");
-  const [filteredData, setfilteredData] = useState([]);
-  // useEffect(() => {
-  //   setfilteredData(() =>
-  //     data.filter((i) => {
-  //       return i.name.toLowerCase().includes(term.toLowerCase());
-  //     })
-  //   );
-  // }, [term, data]);
 
   const newData = data.filter((i) => {
     return i.name.toLowerCase().includes(term.toLowerCase());
